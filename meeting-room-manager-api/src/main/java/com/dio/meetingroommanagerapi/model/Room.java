@@ -1,11 +1,15 @@
 package com.dio.meetingroommanagerapi.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -22,21 +26,12 @@ public class Room {
 	private String name;
 
 	@Column(name = "date", nullable = false)
-	private String Date;
+	private LocalDate Date;
 
 	@Column(name = "start_hour", nullable = false)
 	private String startHour;
 
 	@Column(name = "end_hour", nullable = false)
 	private String endHour;
-
-	public Room(long id, String name, String date, String startHour, String endHour) {
-		super();
-		this.id = id;
-		this.name = name;
-		Date = date;
-		this.startHour = startHour;
-		this.endHour = endHour;
-	}
 
 }
